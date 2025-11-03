@@ -1,0 +1,119 @@
+# 🌤️ OpenWeather APIs Documentation
+
+This document provides details and official links for the three main **OpenWeather** APIs  
+used in the project to fetch geographic coordinates, weather data, and air quality information.
+
+---
+
+## 🌍 1. Geocoding API (Get latitude & longitude from city name)
+
+📄 **Official Documentation:**  
+🔗 https://openweathermap.org/api/geocoding-api
+
+### 🧩 Endpoint:
+```
+http://api.openweathermap.org/geo/1.0/direct?q={CITY_NAME}&limit=1&appid={API_KEY}
+```
+
+### 🧪 Example:
+```
+http://api.openweathermap.org/geo/1.0/direct?q=Tehran&limit=1&appid=YOUR_API_KEY
+```
+
+### 📦 Sample Output:
+```json
+[
+  {
+    "name": "Tehran",
+    "lat": 35.6892,
+    "lon": 51.3890,
+    "country": "IR"
+  }
+]
+```
+
+## 🌦️ 2. Current Weather Data API (Temperature, humidity, wind, etc.)
+
+📄 **Official Documentation:**  
+🔗 https://openweathermap.org/current
+
+### 🧩 Endpoint:
+```
+https://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LON}&units=metric&appid={API_KEY}
+```
+
+### 🧪 Example:
+```
+https://api.openweathermap.org/data/2.5/weather?lat=35.6892&lon=51.3890&units=metric&appid=YOUR_API_KEY
+```
+
+### 📦 Sample Output:
+```json
+{
+  "main": {
+    "temp": 24.5,
+    "pressure": 1015,
+    "humidity": 36
+  },
+  "wind": {
+    "speed": 3.1
+  }
+}
+```
+
+## 🌫️ 3. Air Pollution API (Air Quality Index and Pollutants)
+
+📄 **Official Documentation:**  
+🔗 https://openweathermap.org/api/air-pollution
+
+### 🧩 Endpoint:
+```
+http://api.openweathermap.org/data/2.5/air_pollution?lat={LAT}&lon={LON}&appid={API_KEY}
+```
+
+### 🧪 Example:
+```
+http://api.openweathermap.org/data/2.5/air_pollution?lat=35.6892&lon=51.3890&appid=YOUR_API_KEY
+```
+
+### 📦 Sample Output:
+```json
+{
+  "list": [
+    {
+      "main": { "aqi": 2 },
+      "components": {
+        "co": 201.94,
+        "no": 0.0,
+        "no2": 0.01,
+        "o3": 68.5,
+        "so2": 0.6,
+        "pm2_5": 3.0,
+        "pm10": 5.4,
+        "nh3": 0.1
+      }
+    }
+  ]
+}
+```
+
+---
+
+## 🧠 How These APIs Work Together
+
+- **Geocoding API** → Get latitude/longitude for a given city name  
+- **Weather API** → Use those coordinates to get temperature, humidity, and wind  
+- **Air Pollution API** → Use the same coordinates to get AQI and pollutant data  
+
+---
+
+## 📘 Usage in Project
+
+These APIs are integrated within the `OpenWeatherRemoteService` class,  
+which combines the three responses to build a unified weather result model.
+
+---
+
+✍️ **Author:** Ali Abyari  
+📅 **Date:** November 2025  
+🏗️ **Project:** WheatherInformation Service

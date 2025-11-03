@@ -1,0 +1,80 @@
+Answers to Technical Questions
+
+
+
+1.How much time did you spend on this task?
+If you had more time, what improvements or additions would you make?
+ 
+I spent around 2.5 to 3 hours on this project.
+Weather history reports (previous days)
+Pattern detection from past weather data  
+Add Docker and CI/CD pipeline If I Had Microservices Or Modular monolithic 
+---
+
+2.What is the most useful feature recently added to your favorite programming language?
+ Please include a code snippet to demonstrate how you use it.
+
+In this project, I used some modern features of C# and .NET, like:
+
+Minimal API for clean and fast endpoint creation  
+Clean Architecture to keep the project organized and scalable
+Best Log Tools:
+"Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()
+    .WriteTo.Console()
+    .WriteTo.File(
+        path: $@"{builder.Configuration["SeriLogOptions:LogFilePath"]}{builder.Configuration["SeriLogOptions:LogFileName"]}.txt",
+        rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+builder.Host.UseSerilog(Log.Logger);"
+
+3.How do you identify and diagnose a performance issue in a production environment?
+ Have you done this before?
+
+To find performance problems in a real environment I usually:
+
+Check CPU, RAM, response time, and TPS and RPS 
+Use logging tools like Serilog aNd Collaborator Monitoring Team To Find This.
+Check slow database queries using SQL Profiler or EF Core logging
+
+---
+
+4.What’s the last technical book you read or technical conference you attended?
+ What did you learn from it?
+
+I joined a session about Microsoft Agent Framework, presented by Mr. Sepehr Pakbaz (Microsoft Solution Architect).
+
+Things I learned:
+
+- AI is moving toward smart and autonomous AI Agents  
+- Microsoft is following this direction with Azure and Copilot  
+- We talked about Agent structure, memory, event-driven architecture, and orchestration
+
+---
+
+5.What’s your opinion about this technical test?
+
+I think this test was interesting.  
+It helped me learn and work with the OpenWeather API.  
+It was simple but useful and close to real projects.
+
+---
+
+6. Myself in JSON Format
+
+json
+{
+  "name": "Ali Abyari",
+  "role": "Backend Developer",
+  "experience": "4+ years",
+  "location": "Tehran, Iran",
+  "technologies": [
+    "C#",
+    ".NET Core",
+    "Microservices",
+    "SQL Server",
+    "Entity Framework Core"
+  ],
+  "interests": ["Backend .NET Development", "Devops", "AI Agents"],
+  "currently_learning": "Microsoft AI Agent Framework"
+}
